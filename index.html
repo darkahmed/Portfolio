@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Sameh Matar</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/SxwZVVJJ/bitmap.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        :root {
+            --primary: #121212;
+            --secondary: #1e1e1e;
+            --accent: #4da6ff;
+            --light: #e0e0e0;
+            --text: #b0b0b0;
+            --card: #242424;
+            --glow: rgba(77, 166, 255, 0.3);
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--primary) 0%, #0a0a0a 100%);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(to bottom, var(--secondary), var(--primary));
+            border-bottom: 2px solid #333;
+            position: relative;
+            overflow: hidden;
+            z-index: 10;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(77, 166, 255, 0.1), transparent);
+            animation: pulse 8s infinite;
+            z-index: -1;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.2; }
+            100% { transform: scale(1); opacity: 0.5; }
+        }
+        
+        h1 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 2.8rem;
+            text-shadow: 0 0 15px rgba(77, 166, 255, 0.7);
+            animation: fadeInDown 1s ease-out;
+            margin-bottom: 15px;
+        }
+        
+        .tagline {
+            font-size: 1.3rem;
+            color: var(--text);
+            max-width: 800px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(77, 166, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(77, 166, 255, 0.2);
+            box-shadow: 0 0 20px rgba(77, 166, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-link::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .social-link:hover {
+            background: var(--accent);
+            color: #121212;
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 5px 25px rgba(77, 166, 255, 0.5);
+        }
+        
+        .social-link:hover::after {
+            left: 100%;
+        }
+        
+        /* Card Styles */
+        .card {
+            background: var(--card);
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 
+                         0 0 20px rgba(77, 166, 255, 0.2);
+            padding: 30px;
+            margin: 20px 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(77, 166, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            transform: translateY(0);
+            animation: floatCard 6s ease-in-out infinite;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
+                        0 0 30px rgba(77, 166, 255, 0.4);
+        }
+        
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            color: white;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        /* Content Styles */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        li {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: linear-gradient(45deg, #1e1e1e, #2a2a2a);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-left: 3px solid var(--accent);
+            animation: fadeIn 0.5s ease-out;
+            animation-fill-mode: both;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        li::before {
+            content: '•';
+            color: var(--accent);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-right: 10px;
+        }
+        
+        li:hover {
+            background: linear-gradient(45deg, #2a2a2a, rgba(77, 166, 255, 0.2));
+            transform: translateX(10px);
+        }
+        
+        strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        a:hover {
+            color: #ffffff;
+        }
+        
+        a:hover::after {
+            width: 100%;
+        }
+        
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #1e1e1e;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.7s ease-out;
+        }
+        
+        th, td {
+            padding: 18px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+        
+        th {
+            background: linear-gradient(to right, #1a1a1a, #2a2a2a);
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+        
+        td {
+            background: rgba(36, 36, 36, 0.7);
+            color: var(--light);
+        }
+        
+        tr:hover td {
+            background: rgba(77, 166, 255, 0.1);
+        }
+        
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #1e1e1e, #242424);
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(77, 166, 255, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 25px rgba(77, 166, 255, 0.2);
+        }
+        
+        .stat-card h3 {
+            color: var(--accent);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(77, 166, 255, 0.3);
+        }
+        
+        .stat-card p {
+            color: var(--text);
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(10, 10, 10, 0.8);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(77, 166, 255, 0.1);
+            position: relative;
+        }
+        
+        .copyright {
+            color: var(--text);
+            font-size: 1rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(77, 166, 255, 0.5);
+            animation: float 6s infinite ease-in-out;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-link {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Ahmed Sameh Abdelnaby</h1>
+            <p class="tagline">
+                <strong>Competitive Programmer • EOI'er • International Medalist</strong><br>
+                Coding in C++ since 2023 — focused on algorithmic thinking and precise implementations.
+            </p>
+            <div class="social-links">
+                <a href="https://github.com/darkahmed" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/darkahmed/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- Quick Facts -->
+        <section id="quick-facts">
+            <div class="section-title">
+                <h2>Quick Facts</h2>
+            </div>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>Egypt</h3>
+                    <p>Location</p>
+                </div>
+                <div class="stat-card">
+                    <h3>USACO</h3>
+                    <p>Platinum Level</p>
+                </div>
+                <div class="stat-card">
+                    <h3>2023</h3>
+                    <p>Started Coding</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <ul>
+                    <li>Based in <strong>Egypt</strong></li>
+                    <li>Focus: <strong>USACO topics up to Platinum</strong> (contest-style thinking, implementation tricks, mathy problems)</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Achievements -->
+        <section id="achievements">
+            <div class="section-title">
+                <h2>My Achievements</h2>
+            </div>
+            
+            <div class="card">
+                <ul>
+                    <li><strong>Expert on Codeforces (2025)</strong></li>
+                    <li><strong>infO(1)Cup — Medalist (2025)</strong></li>
+                    <li><strong>4th place (global) — TeamsCode Novice Division (2025)</strong></li>
+                    <li><strong>Ranked 11 in Egypt — ETSR Online Quals (2025)</strong></li>
+                    <li><strong>Participated — APIO (2025)</strong></li>
+                    <li><strong>Represented Egypt — IATI SHU (Junior Division) (2024)</strong></li>
+                    <li><strong>Qualified — EOI Juniors Winter Camp (2024)</strong></li>
+                    <li><strong>Worked at DataCurve (2024)</strong></li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Roles & Community -->
+        <section id="roles">
+            <div class="section-title">
+                <h2>Roles & Community</h2>
+            </div>
+            
+            <div class="card">
+                <ul>
+                    <li><strong>Mentor</strong> — CS Club STEM</li>
+                    <li><strong>Member of the council</strong> — Hack Club STEM</li>
+                    <li><strong>Problem setter</strong> — Asyut Hack Club</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Contact -->
+        <section id="contact">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+            </div>
+            
+            <div class="card">
+                <ul>
+                    <li><strong>Email:</strong> <a href="mailto:ahmed2010ne@gmail.com">ahmed2010ne@gmail.com</a></li>
+                    <li><strong>Phone:</strong> +201110114684</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Competitive Profiles -->
+        <section id="profiles">
+            <div class="section-title">
+                <h2>Competitive Profiles</h2>
+            </div>
+            
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Platform</th>
+                            <th>Handle / Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Codeforces</strong></td>
+                            <td><a href="https://codeforces.com/profile/darkahmed" target="_blank">darkahmed</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AtCoder</strong></td>
+                            <td><a href="https://atcoder.jp/users/darkahmed" target="_blank">darkahmed</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>CSES</strong></td>
+                            <td><a href="https://cses.fi/user/221260" target="_blank">darkahmed</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+    
+    <script>
+        // Create particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random size
+                const size = Math.random() * 6 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Random animation delay and duration
+                const delay = Math.random() * 5;
+                const duration = Math.random() * 10 + 10;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${duration}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Intersection Observer for section animations
+        const sections = document.querySelectorAll('section');
+        const options = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Animate list items sequentially
+                    const listItems = entry.target.querySelectorAll('li');
+                    listItems.forEach((item, index) => {
+                        item.style.animationDelay = `${index * 0.1}s`;
+                    });
+                }
+            });
+        }, options);
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Initialize particles
+        createParticles();
+        
+        // Add header animation
+        document.querySelector('h1').style.animation = 'fadeInDown 1s ease-out';
+        
+        // Animate table with delay
+        const table = document.querySelector('table');
+        if (table) {
+            table.style.animationDelay = '0.2s';
+        }
+    </script>
+</body>
+</html>
