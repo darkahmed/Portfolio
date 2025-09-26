@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ahmed Sameh Abdelnaby - Competitive Programmer & International Medalist</title>
   <meta name="description" content="Ahmed Sameh Abdelnaby - Expert competitive programmer, EOI participant, and international medalist specializing in algorithmic thinking and C++ programming.">
-  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Russo+One&family=Saira+Extra+Condensed:wght@300;400;600&family=Audiowide&family=Tourney:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -33,7 +32,6 @@
       font-size: 18px;
     }
 
-    /* Loading Screen */
     .loading-screen {
       position: fixed;
       top: 0;
@@ -64,7 +62,6 @@
       100% { transform: rotate(360deg); }
     }
 
-    /* Progress Bar - Improved */
     .progress-container {
       position: fixed;
       top: 0;
@@ -83,7 +80,6 @@
       transform-origin: left;
     }
 
-    /* Navigation Bar with Active Indicator - Improved for mobile */
     nav {
       position: fixed;
       top: 0; 
@@ -135,7 +131,6 @@
       box-shadow: 0 0 10px var(--primary);
     }
 
-    /* Background Effects */
     .gradient-overlay {
       position: fixed;
       top: 0; left: 0;
@@ -152,7 +147,6 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Realistic Starfield */
     .stars {
       position: fixed;
       width: 100%; height: 100%;
@@ -187,7 +181,6 @@
       }
     }
 
-    /* 3D Geometry Art - Simplified for mobile */
     .geometry-art {
       position: fixed;
       top: 0; left: 0;
@@ -216,7 +209,6 @@
       transform-style: preserve-3d;
     }
     
-    /* Tetrahedron */
     .polyhedron-1 .face:nth-child(1) {
       width: 120px; height: 104px;
       clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
@@ -241,7 +233,6 @@
       transform: rotateX(180deg) translateY(104px) translateZ(34px);
     }
     
-    /* Cube */
     .polyhedron-2 .face {
       width: 90px; height: 90px;
       background: rgba(0, 234, 255, 0.05);
@@ -254,7 +245,6 @@
     .polyhedron-2 .face:nth-child(5) { transform: rotateX(90deg) translateZ(45px); }
     .polyhedron-2 .face:nth-child(6) { transform: rotateX(-90deg) translateZ(45px); }
     
-    /* Octahedron */
     .polyhedron-3 .face {
       width: 140px; height: 121px;
       clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
@@ -269,7 +259,6 @@
     .polyhedron-3 .face:nth-child(7) { transform: rotateY(45deg) rotateX(60deg) translateZ(61px); }
     .polyhedron-3 .face:nth-child(8) { transform: rotateY(135deg) rotateX(60deg) translateZ(61px); }
     
-    /* Dodecahedron */
     .polyhedron-4 .face {
       width: 80px; height: 80px;
       background: rgba(179, 102, 255, 0.05);
@@ -290,7 +279,6 @@
       100% { transform: rotateX(120deg) rotateY(360deg) rotateZ(60deg) translate(0, 0); }
     }
 
-    /* Main Header - Improved for mobile */
     h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 3.5em;
@@ -384,7 +372,6 @@
       95% { transform: translate(0); }
     }
 
-    /* Subheadings */
     h2 {
       font-family: 'Russo One', sans-serif;
       color: var(--primary);
@@ -468,7 +455,6 @@
       letter-spacing: 1px;
     }
 
-    /* Improved Cards with Glassmorphism */
     .card {
       background: var(--card-bg);
       border: 1px solid rgba(0, 234, 255, 0.25);
@@ -488,7 +474,6 @@
       transform: translateY(0);
     }
 
-    /* Buttons - Improved for mobile */
     .btn-container {
       text-align: center;
       margin: 20px 0;
@@ -538,7 +523,6 @@
       font-size: 1.3em;
     }
 
-    /* Intro text styling */
     .intro-text {
       text-align: center;
       font-size: 1.4em;
@@ -553,7 +537,6 @@
       text-shadow: 0 0 5px var(--secondary);
     }
 
-    /* Profile Cards */
     .profiles-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -598,7 +581,6 @@
       transform: translateY(-2px);
     }
 
-    /* Toast Notification */
     .toast {
       position: fixed;
       bottom: 20px;
@@ -622,7 +604,6 @@
       opacity: 1;
     }
 
-    /* Mobile Menu Toggle - Fixed */
     .menu-toggle {
       display: none;
       position: fixed;
@@ -657,7 +638,6 @@
       border-radius: 2px;
     }
     
-    /* إصلاح كامل للقائمة على الموبايل */
     @media (max-width: 768px) {
       body {
         font-size: 16px;
@@ -665,7 +645,7 @@
       
       h1 {
         font-size: 2.5em;
-        margin-top: 80px; /* تقليل المسافة لتعويض إخفاء القائمة */
+        margin-top: 80px;
         letter-spacing: 1px;
       }
       
@@ -677,7 +657,6 @@
         display: flex;
       }
       
-      /* إخفاء القائمة تمامًا في الحالة العادية */
       nav {
         position: fixed;
         top: 0;
@@ -722,9 +701,8 @@
         box-shadow: 0 10px 25px rgba(0, 234, 255, 0.2);
       }
       
-      /* تحسين شكل الزر عند التحول إلى X */
       .menu-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(7px, 7px);
+        transform: rotate(45deg) translate(6.5px, 6.5px);
       }
       
       .menu-toggle.active span:nth-child(2) {
@@ -732,7 +710,7 @@
       }
       
       .menu-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
+        transform: rotate(-45deg) translate(6.5px, -6.5px);
       }
       
       .container {
@@ -741,7 +719,6 @@
         transition: transform 0.4s ease;
       }
       
-      /* تأثير تحريك المحتوى عند فتح القائمة */
       body.menu-open .container {
         transform: translateY(5vh);
       }
@@ -811,7 +788,6 @@
       }
     }
 
-    /* تحسينات إضافية للشاشات الكبيرة */
     @media (min-width: 769px) {
       .menu-toggle {
         display: none;
@@ -820,36 +796,30 @@
   </style>
 </head>
 <body>
-  <!-- Loading Screen -->
   <div class="loading-screen" id="loadingScreen">
     <div class="loading-spinner"></div>
     <p>Loading Portfolio...</p>
   </div>
 
-  <!-- Progress Bar -->
   <div class="progress-container">
     <div class="progress-bar" id="progressBar"></div>
   </div>
 
-  <!-- Mobile Menu Toggle -->
   <div class="menu-toggle" id="menuToggle">
     <span></span>
     <span></span>
     <span></span>
   </div>
 
-  <!-- Background Elements -->
   <div class="gradient-overlay"></div>
   <div class="stars" id="starsContainer"></div>
   <div class="geometry-art">
-    <!-- Tetrahedron -->
     <div class="polyhedron polyhedron-1">
       <div class="face"></div>
       <div class="face"></div>
       <div class="face"></div>
       <div class="face"></div>
     </div>
-    <!-- Cube -->
     <div class="polyhedron polyhedron-2">
       <div class="face"></div>
       <div class="face"></div>
@@ -858,7 +828,6 @@
       <div class="face"></div>
       <div class="face"></div>
     </div>
-    <!-- Octahedron -->
     <div class="polyhedron polyhedron-3">
       <div class="face"></div>
       <div class="face"></div>
@@ -869,7 +838,6 @@
       <div class="face"></div>
       <div class="face"></div>
     </div>
-    <!-- Dodecahedron -->
     <div class="polyhedron polyhedron-4">
       <div class="face"></div>
       <div class="face"></div>
@@ -879,7 +847,6 @@
     </div>
   </div>
 
-  <!-- Navigation -->
   <nav id="mainNav">
     <a href="#about">About</a>
     <a href="#Achievements">Achievements</a>
@@ -888,7 +855,6 @@
     <a href="#contacts">Contacts</a>
   </nav>
 
-  <!-- Main Content -->
   <div class="container">
     <h1>
       <span class="glitch-layers">
@@ -910,22 +876,20 @@
 
     <hr>
 
-    <!-- About Section -->
     <div id="about" class="card">
       <h2>Quick Facts</h2>
       <ul>
         <li>Based in Egypt</li>
-        <li>Focus: USACO Platinum level problems</li>
+        <li>Focus: USACO Platinum level topics</li>
         <li>Specialized in advanced data structures and algorithms</li>
         <li>Passionate about competitive programming challenges</li>
       </ul>
     </div>
 
-    <!-- Achievements Section -->
     <div id="Achievements" class="card">
       <h2>Some Achievements</h2>
       <ul>
-        <li><strong>Expert</strong> on Codeforces (2025)</li>
+        <li><strong>Expert</strong> — Codeforces (2025)</li>
         <li><strong>Medalist</strong> — infO(1)Cup (2025)</li>
         <li><strong>4th place (Global)</strong> — Summer TeamsCode Novice Division (2025)</li>
         <li><strong>11th place (National)</strong> — ETSR Online Quals (2025)</li>
@@ -936,7 +900,6 @@
       </ul>
     </div>
 
-    <!-- Roles Section -->
     <div id="roles" class="card">
       <h2>Roles & Community</h2>
       <ul>
@@ -946,7 +909,6 @@
       </ul>
     </div>
 
-    <!-- Competitive Profiles Section -->
     <div id="profiles" class="card">
       <h2>Competitive Profiles</h2>
       
@@ -977,7 +939,6 @@
       </div>
     </div>
 
-    <!-- Contacts Section -->
     <div id="contacts" class="card contact">
       <h2>Contacts</h2>
       <p>Email: <a href="mailto:ahmed2010ne@gmail.com" id="emailLink">ahmed2010ne@gmail.com</a></p>
@@ -986,11 +947,9 @@
     </div>
   </div>
 
-  <!-- Toast Notification -->
   <div class="toast" id="toast">Email copied to clipboard!</div>
 
   <script>
-    // Loading Screen
     window.addEventListener('load', function() {
       const loadingScreen = document.getElementById('loadingScreen');
       setTimeout(() => {
@@ -1001,7 +960,6 @@
       }, 1000);
     });
 
-    // Improved Progress Bar with requestAnimationFrame
     let ticking = false;
     let lastScrollY = 0;
     
@@ -1011,7 +969,6 @@
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
       
-      // Use transform for better performance
       document.getElementById('progressBar').style.width = scrollPercent + '%';
       
       ticking = false;
@@ -1029,7 +986,6 @@
       requestTick();
     });
 
-    // Mobile Menu Toggle - Fixed
     const menuToggle = document.getElementById('menuToggle');
     const mainNav = document.getElementById('mainNav');
     const body = document.body;
@@ -1039,7 +995,6 @@
       menuToggle.classList.toggle('active');
       body.classList.toggle('menu-open');
       
-      // منع التمرير عند فتح القائمة
       if (mainNav.classList.contains('active')) {
         body.style.overflow = 'hidden';
       } else {
@@ -1047,7 +1002,6 @@
       }
     });
 
-    // Close menu when clicking on a link (mobile)
     document.querySelectorAll('nav a').forEach(link => {
       link.addEventListener('click', function() {
         if (window.innerWidth <= 768) {
@@ -1059,7 +1013,6 @@
       });
     });
 
-    // إغلاق القائمة عند النقر خارجها
     document.addEventListener('click', function(event) {
       if (window.innerWidth <= 768 && 
           mainNav.classList.contains('active') && 
@@ -1072,7 +1025,6 @@
       }
     });
 
-    // Active Navigation - Fixed version
     window.addEventListener('scroll', function() {
       const sections = document.querySelectorAll('.card');
       const navLinks = document.querySelectorAll('nav a');
@@ -1081,7 +1033,6 @@
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        // More precise calculation for active section
         if (window.scrollY >= (sectionTop - 150) && 
             window.scrollY < (sectionTop + sectionHeight - 100)) {
           current = section.getAttribute('id');
@@ -1096,29 +1047,24 @@
       });
     });
 
-    // Starfield Generator
     const starsContainer = document.querySelector('.stars');
     for (let i = 0; i < 150; i++) {
       const star = document.createElement('div');
       star.className = 'star';
       
-      // Random size between 1-4px
       const size = 1 + Math.random() * 3;
       star.style.width = `${size}px`;
       star.style.height = `${size}px`;
       
-      // Random position
       star.style.top = `${Math.random() * 100}%`;
       star.style.left = `${Math.random() * 100}%`;
       
-      // Random animation duration
       star.style.animationDuration = `${3 + Math.random() * 4}s`;
       star.style.animationDelay = `${Math.random() * 5}s`;
       
       starsContainer.appendChild(star);
     }
 
-    // Intersection Observer for Animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1131,7 +1077,6 @@
       observer.observe(card);
     });
 
-    // Smooth Scroll - Fixed version
     document.querySelectorAll('nav a').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -1139,14 +1084,12 @@
         const targetElement = document.querySelector(targetId);
         
         if (targetElement) {
-          // More precise scroll calculation
           const offsetTop = targetElement.offsetTop - 80;
           window.scrollTo({
             top: offsetTop,
             behavior: 'smooth'
           });
           
-          // Update active nav after scroll
           setTimeout(() => {
             document.querySelectorAll('nav a').forEach(link => {
               link.classList.remove('active');
@@ -1157,7 +1100,6 @@
       });
     });
 
-    // Email Copy Functionality
     document.getElementById('emailLink').addEventListener('click', function(e) {
       e.preventDefault();
       const email = 'ahmed2010ne@gmail.com';
@@ -1169,7 +1111,6 @@
           toast.classList.remove('show');
         }, 3000);
       }).catch(() => {
-        // Fallback for older browsers
         const textArea = document.createElement('textarea');
         textArea.value = email;
         document.body.appendChild(textArea);
