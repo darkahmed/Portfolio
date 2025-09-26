@@ -30,6 +30,7 @@
       overflow-x: hidden;
       font-weight: 400;
       letter-spacing: 0.5px;
+      font-size: 18px; /* زيادة حجم الخط الأساسي */
     }
 
     /* Loading Screen */
@@ -78,23 +79,25 @@
       height: 100%;
       background: linear-gradient(90deg, var(--secondary), var(--primary));
       width: 0%;
-      transition: width 0.1s ease-out; /* Smoother transition */
-      transform-origin: left; /* Better animation performance */
+      transition: width 0.1s ease-out;
+      transform-origin: left;
     }
 
-    /* Navigation Bar with Active Indicator */
+    /* Navigation Bar with Active Indicator - Improved for mobile */
     nav {
       position: fixed;
-      top: 0; left: 0;
+      top: 0; 
+      left: 0;
       width: 100%;
-      padding: 15px 0;
-      background: rgba(5,5,15,0.85);
+      padding: 12px 0;
+      background: rgba(5,5,15,0.95);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(0,234,255,0.15);
       z-index: 1000;
       display: flex;
       justify-content: center;
-      gap: 25px;
+      flex-wrap: wrap;
+      gap: 15px;
     }
     
     nav a {
@@ -102,13 +105,14 @@
       text-decoration: none;
       font-family: 'Tourney', cursive;
       font-weight: 600;
-      font-size: 1.2em;
+      font-size: 1.3em; /* زيادة حجم الخط */
       letter-spacing: 1px;
       transition: 0.3s;
-      padding: 5px 10px;
+      padding: 8px 12px;
       border-radius: 5px;
       text-transform: uppercase;
       position: relative;
+      flex-shrink: 0;
     }
     
     nav a:hover, nav a.active {
@@ -121,7 +125,7 @@
     nav a.active::after {
       content: '';
       position: absolute;
-      bottom: -15px;
+      bottom: -12px;
       left: 50%;
       transform: translateX(-50%);
       width: 6px;
@@ -183,7 +187,7 @@
       }
     }
 
-    /* 3D Geometry Art */
+    /* 3D Geometry Art - Simplified for mobile */
     .geometry-art {
       position: fixed;
       top: 0; left: 0;
@@ -199,10 +203,10 @@
       animation: float 30s infinite linear;
     }
     
-    .polyhedron-1 { top: 15%; left: 10%; width: 150px; height: 150px; animation-duration: 40s; }
-    .polyhedron-2 { top: 70%; left: 80%; width: 120px; height: 120px; animation-duration: 35s; animation-direction: reverse; }
-    .polyhedron-3 { top: 40%; left: 60%; width: 180px; height: 180px; animation-duration: 50s; }
-    .polyhedron-4 { top: 80%; left: 20%; width: 100px; height: 100px; animation-duration: 45s; animation-direction: reverse; }
+    .polyhedron-1 { top: 15%; left: 10%; width: 120px; height: 120px; animation-duration: 40s; }
+    .polyhedron-2 { top: 70%; left: 80%; width: 90px; height: 90px; animation-duration: 35s; animation-direction: reverse; }
+    .polyhedron-3 { top: 40%; left: 60%; width: 140px; height: 140px; animation-duration: 50s; }
+    .polyhedron-4 { top: 80%; left: 20%; width: 80px; height: 80px; animation-duration: 45s; animation-direction: reverse; }
     
     .face {
       position: absolute;
@@ -214,69 +218,69 @@
     
     /* Tetrahedron */
     .polyhedron-1 .face:nth-child(1) {
-      width: 150px; height: 130px;
+      width: 120px; height: 104px;
       clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-      transform: translateZ(43px) rotateX(35deg);
+      transform: translateZ(34px) rotateX(35deg);
     }
     
     .polyhedron-1 .face:nth-child(2) {
-      width: 150px; height: 130px;
+      width: 120px; height: 104px;
       clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-      transform: rotateY(120deg) translateZ(43px) rotateX(35deg);
+      transform: rotateY(120deg) translateZ(34px) rotateX(35deg);
     }
     
     .polyhedron-1 .face:nth-child(3) {
-      width: 150px; height: 130px;
+      width: 120px; height: 104px;
       clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-      transform: rotateY(240deg) translateZ(43px) rotateX(35deg);
+      transform: rotateY(240deg) translateZ(34px) rotateX(35deg);
     }
     
     .polyhedron-1 .face:nth-child(4) {
-      width: 150px; height: 130px;
+      width: 120px; height: 104px;
       clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
-      transform: rotateX(180deg) translateY(130px) translateZ(43px);
+      transform: rotateX(180deg) translateY(104px) translateZ(34px);
     }
     
     /* Cube */
     .polyhedron-2 .face {
-      width: 120px; height: 120px;
+      width: 90px; height: 90px;
       background: rgba(0, 234, 255, 0.05);
     }
     
-    .polyhedron-2 .face:nth-child(1) { transform: translateZ(60px); }
-    .polyhedron-2 .face:nth-child(2) { transform: rotateY(90deg) translateZ(60px); }
-    .polyhedron-2 .face:nth-child(3) { transform: rotateY(180deg) translateZ(60px); }
-    .polyhedron-2 .face:nth-child(4) { transform: rotateY(-90deg) translateZ(60px); }
-    .polyhedron-2 .face:nth-child(5) { transform: rotateX(90deg) translateZ(60px); }
-    .polyhedron-2 .face:nth-child(6) { transform: rotateX(-90deg) translateZ(60px); }
+    .polyhedron-2 .face:nth-child(1) { transform: translateZ(45px); }
+    .polyhedron-2 .face:nth-child(2) { transform: rotateY(90deg) translateZ(45px); }
+    .polyhedron-2 .face:nth-child(3) { transform: rotateY(180deg) translateZ(45px); }
+    .polyhedron-2 .face:nth-child(4) { transform: rotateY(-90deg) translateZ(45px); }
+    .polyhedron-2 .face:nth-child(5) { transform: rotateX(90deg) translateZ(45px); }
+    .polyhedron-2 .face:nth-child(6) { transform: rotateX(-90deg) translateZ(45px); }
     
     /* Octahedron */
     .polyhedron-3 .face {
-      width: 180px; height: 156px;
+      width: 140px; height: 121px;
       clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
     }
     
-    .polyhedron-3 .face:nth-child(1) { transform: translateZ(78px) rotateX(35deg); }
-    .polyhedron-3 .face:nth-child(2) { transform: rotateY(90deg) translateZ(78px) rotateX(35deg); }
-    .polyhedron-3 .face:nth-child(3) { transform: rotateY(180deg) translateZ(78px) rotateX(35deg); }
-    .polyhedron-3 .face:nth-child(4) { transform: rotateY(270deg) translateZ(78px) rotateX(35deg); }
-    .polyhedron-3 .face:nth-child(5) { transform: rotateX(90deg) translateZ(78px) rotateZ(45deg); }
-    .polyhedron-3 .face:nth-child(6) { transform: rotateX(-90deg) translateZ(78px) rotateZ(45deg); }
-    .polyhedron-3 .face:nth-child(7) { transform: rotateY(45deg) rotateX(60deg) translateZ(78px); }
-    .polyhedron-3 .face:nth-child(8) { transform: rotateY(135deg) rotateX(60deg) translateZ(78px); }
+    .polyhedron-3 .face:nth-child(1) { transform: translateZ(61px) rotateX(35deg); }
+    .polyhedron-3 .face:nth-child(2) { transform: rotateY(90deg) translateZ(61px) rotateX(35deg); }
+    .polyhedron-3 .face:nth-child(3) { transform: rotateY(180deg) translateZ(61px) rotateX(35deg); }
+    .polyhedron-3 .face:nth-child(4) { transform: rotateY(270deg) translateZ(61px) rotateX(35deg); }
+    .polyhedron-3 .face:nth-child(5) { transform: rotateX(90deg) translateZ(61px) rotateZ(45deg); }
+    .polyhedron-3 .face:nth-child(6) { transform: rotateX(-90deg) translateZ(61px) rotateZ(45deg); }
+    .polyhedron-3 .face:nth-child(7) { transform: rotateY(45deg) rotateX(60deg) translateZ(61px); }
+    .polyhedron-3 .face:nth-child(8) { transform: rotateY(135deg) rotateX(60deg) translateZ(61px); }
     
     /* Dodecahedron */
     .polyhedron-4 .face {
-      width: 100px; height: 100px;
+      width: 80px; height: 80px;
       background: rgba(179, 102, 255, 0.05);
       clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
     }
     
-    .polyhedron-4 .face:nth-child(1) { transform: translateZ(35px); }
-    .polyhedron-4 .face:nth-child(2) { transform: rotateY(72deg) translateZ(35px); }
-    .polyhedron-4 .face:nth-child(3) { transform: rotateY(144deg) translateZ(35px); }
-    .polyhedron-4 .face:nth-child(4) { transform: rotateY(216deg) translateZ(35px); }
-    .polyhedron-4 .face:nth-child(5) { transform: rotateY(288deg) translateZ(35px); }
+    .polyhedron-4 .face:nth-child(1) { transform: translateZ(28px); }
+    .polyhedron-4 .face:nth-child(2) { transform: rotateY(72deg) translateZ(28px); }
+    .polyhedron-4 .face:nth-child(3) { transform: rotateY(144deg) translateZ(28px); }
+    .polyhedron-4 .face:nth-child(4) { transform: rotateY(216deg) translateZ(28px); }
+    .polyhedron-4 .face:nth-child(5) { transform: rotateY(288deg) translateZ(28px); }
     
     @keyframes float {
       0% { transform: rotateX(0) rotateY(0) rotateZ(0) translate(0, 0); }
@@ -286,19 +290,21 @@
       100% { transform: rotateX(120deg) rotateY(360deg) rotateZ(60deg) translate(0, 0); }
     }
 
-    /* Main Header */
+    /* Main Header - Improved for mobile */
     h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 3.5em;
+      font-size: 3.5em; /* زيادة حجم الخط */
       font-weight: 900;
       color: var(--primary);
       text-align: center;
-      margin-top: 70px;
+      margin-top: 90px;
       position: relative;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       text-shadow: 0 0 10px var(--primary);
       animation: textGlow 3s infinite alternate;
       text-transform: uppercase;
+      padding: 0 15px;
+      line-height: 1.2;
     }
     
     @keyframes textGlow {
@@ -359,7 +365,7 @@
     
     .glitch-main {
       position: relative;
-      z-index: 0;
+      z-index: 2;
       animation: mainGlitch 5s infinite;
     }
     
@@ -385,15 +391,16 @@
       text-align: center;
       text-shadow: 0 0 14px var(--primary);
       margin-top: 0;
-      font-size: 2.2em;
+      font-size: 2.2em; /* زيادة حجم الخط */
       letter-spacing: 1.5px;
       text-transform: uppercase;
+      padding: 0 10px;
     }
 
     p, li, td {
       color: var(--text-light);
       line-height: 1.6;
-      font-size: 1.2em;
+      font-size: 1.3em; /* زيادة حجم الخط */
       letter-spacing: 0.7px;
     }
 
@@ -409,15 +416,15 @@
 
     .container {
       max-width: 900px;
-      margin: 50px auto;
-      padding: 20px;
+      margin: 40px auto;
+      padding: 15px;
     }
 
     hr {
       border: none;
       height: 2px;
       background: linear-gradient(90deg, transparent, var(--secondary), transparent);
-      margin: 40px 0;
+      margin: 30px 0;
     }
 
     ul {
@@ -426,17 +433,17 @@
     }
     ul li {
       position: relative;
-      padding-left: 25px;
-      margin-bottom: 12px;
-      font-size: 1.3em;
+      padding-left: 30px; /* زيادة المسافة لاستيعاب الخط الأكبر */
+      margin-bottom: 15px; /* زيادة المسافة بين العناصر */
+      font-size: 1.3em; /* زيادة حجم الخط */
     }
     ul li:before {
       content: "";
       position: absolute;
       left: 0;
-      top: 12px;
-      width: 10px;
-      height: 10px;
+      top: 12px; /* تعديل الموضع ليتناسب مع الخط الأكبر */
+      width: 10px; /* زيادة حجم النقطة */
+      height: 10px; /* زيادة حجم النقطة */
       background: var(--secondary);
       border-radius: 50%;
       box-shadow: 0 0 8px var(--secondary);
@@ -448,16 +455,16 @@
       margin-top: 15px;
     }
     th, td {
-      padding: 15px;
+      padding: 15px; /* زيادة المسافة الداخلية */
       border-bottom: 1px solid rgba(255,255,255,0.1);
       text-align: center;
-      font-size: 1.2em;
+      font-size: 1.3em; /* زيادة حجم الخط */
     }
     th {
       color: var(--primary);
       text-shadow: 0 0 10px var(--primary);
       font-family: 'Russo One', sans-serif;
-      font-size: 1.3em;
+      font-size: 1.4em; /* زيادة حجم الخط */
       letter-spacing: 1px;
     }
 
@@ -466,8 +473,8 @@
       background: var(--card-bg);
       border: 1px solid rgba(0, 234, 255, 0.25);
       border-radius: 14px;
-      padding: 30px;
-      margin-bottom: 35px;
+      padding: 25px; /* زيادة المسافة الداخلية */
+      margin-bottom: 30px; /* زيادة المسافة بين البطاقات */
       box-shadow: 0 0 25px rgba(0, 234, 255, 0.15),
                   0 0 35px rgba(179, 102, 255, 0.1);
       opacity: 0;
@@ -481,23 +488,26 @@
       transform: translateY(0);
     }
 
-    /* Buttons */
+    /* Buttons - Improved for mobile */
     .btn-container {
       text-align: center;
-      margin: 25px 0;
+      margin: 20px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
     }
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 18px 35px;
-      margin: 15px;
+      padding: 16px 28px; /* زيادة الحجم */
       font-family: 'Audiowide', cursive;
-      font-size: 1.2em;
+      font-size: 1.2em; /* زيادة حجم الخط */
       font-weight: 600;
       color: #fff;
       border: none;
-      border-radius: 12px;
+      border-radius: 10px;
       cursor: pointer;
       background: linear-gradient(90deg, var(--secondary), var(--primary));
       box-shadow: 0 0 15px var(--primary), 0 0 28px var(--secondary);
@@ -505,14 +515,17 @@
       animation: pulse 3.5s infinite;
       text-decoration: none;
       letter-spacing: 1.5px;
+      flex: 1;
+      min-width: 160px; /* زيادة الحد الأدنى للعرض */
+      max-width: 220px; /* زيادة الحد الأقصى للعرض */
     }
     .btn:hover {
       transform: translateY(-3px) scale(1.07);
       box-shadow: 0 0 30px var(--primary), 0 0 55px var(--secondary);
     }
     .btn i {
-      margin-right: 12px;
-      font-size: 1.3em;
+      margin-right: 8px;
+      font-size: 1.3em; /* زيادة حجم الأيقونات */
     }
     @keyframes pulse {
       0% { box-shadow: 0 0 15px var(--primary), 0 0 28px var(--secondary); }
@@ -522,15 +535,16 @@
 
     .contact p {
       text-align: center;
-      font-size: 1.3em;
+      font-size: 1.3em; /* زيادة حجم الخط */
     }
 
     /* Intro text styling */
     .intro-text {
       text-align: center;
-      font-size: 1.4em;
+      font-size: 1.4em; /* زيادة حجم الخط */
       margin-top: 10px;
       line-height: 1.5;
+      padding: 0 10px;
     }
     
     .intro-text strong {
@@ -542,15 +556,15 @@
     /* Profile Cards */
     .profiles-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
     }
     
     .profile-card {
       background: rgba(255, 255, 255, 0.05);
       border-radius: 12px;
-      padding: 25px;
+      padding: 20px;
       text-align: center;
       border: 1px solid rgba(0, 234, 255, 0.2);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -562,20 +576,21 @@
     }
     
     .profile-icon {
-      font-size: 2.5em;
+      font-size: 2.5em; /* زيادة حجم الأيقونات */
       color: var(--primary);
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       text-shadow: 0 0 10px var(--primary);
     }
     
     .profile-link {
       display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
+      margin-top: 12px;
+      padding: 10px 18px; /* زيادة الحجم */
       background: rgba(0, 234, 255, 0.1);
       border-radius: 5px;
       transition: all 0.3s ease;
       font-weight: 600;
+      font-size: 1.1em; /* زيادة حجم الخط */
     }
     
     .profile-link:hover {
@@ -591,13 +606,15 @@
       background: var(--card-bg);
       border: 1px solid var(--primary);
       border-radius: 8px;
-      padding: 15px 25px;
+      padding: 15px 25px; /* زيادة الحجم */
       color: white;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
       transform: translateY(100px);
       opacity: 0;
       transition: all 0.3s ease;
       z-index: 1003;
+      font-size: 1.1em; /* زيادة حجم الخط */
+      max-width: 280px; /* زيادة العرض */
     }
     
     .toast.show {
@@ -605,30 +622,135 @@
       opacity: 1;
     }
 
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 1002;
+      background: rgba(5,5,15,0.9);
+      border: 1px solid var(--primary);
+      border-radius: 5px;
+      width: 45px; /* زيادة الحجم */
+      height: 45px; /* زيادة الحجم */
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    
+    .menu-toggle span {
+      display: block;
+      width: 28px; /* زيادة الحجم */
+      height: 4px; /* زيادة الحجم */
+      background: var(--primary);
+      margin: 4px 0; /* زيادة المسافة */
+      transition: 0.3s;
+      border-radius: 2px;
+    }
+    
     /* Responsive Design */
     @media (max-width: 768px) {
+      body {
+        font-size: 16px; /* تعديل حجم الخط الأساسي للجوال */
+      }
+      
       h1 {
-        font-size: 2.5em;
-        margin-top: 90px;
+        font-size: 2.5em; /* تعديل حجم العنوان للجوال */
+        margin-top: 100px;
+        letter-spacing: 1px;
+      }
+      
+      h2 {
+        font-size: 1.8em; /* تعديل حجم العنوان الفرعي للجوال */
+      }
+      
+      .menu-toggle {
+        display: flex;
       }
       
       nav {
-        flex-wrap: wrap;
-        gap: 10px;
+        flex-direction: column;
         padding: 10px 0;
+        gap: 5px;
+        height: auto;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        background: rgba(5,5,15,0.95);
+      }
+      
+      nav.active {
+        max-height: 300px;
       }
       
       nav a {
-        font-size: 1em;
+        font-size: 1.2em; /* تعديل حجم الروابط للجوال */
+        padding: 10px 15px;
+        width: 100%;
+        text-align: center;
       }
       
       .container {
         margin: 30px auto;
-        padding: 15px;
+        padding: 10px;
       }
       
       .profiles-container {
         grid-template-columns: 1fr;
+      }
+      
+      .btn-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn {
+        width: 100%;
+        max-width: 250px;
+        font-size: 1.1em; /* تعديل حجم النص في الأزرار للجوال */
+      }
+      
+      .card {
+        padding: 15px;
+        margin-bottom: 20px;
+      }
+      
+      .polyhedron-1, .polyhedron-2, .polyhedron-3, .polyhedron-4 {
+        display: none; /* Hide complex geometry on very small screens */
+      }
+      
+      p, li, td {
+        font-size: 1.1em; /* تعديل حجم النص للجوال */
+      }
+      
+      .intro-text {
+        font-size: 1.2em; /* تعديل حجم النص التمهيدي للجوال */
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2em; /* تعديل إضافي للعنوان */
+        margin-top: 110px;
+      }
+      
+      h2 {
+        font-size: 1.6em; /* تعديل إضافي للعنوان الفرعي */
+      }
+      
+      .intro-text {
+        font-size: 1.1em; /* تعديل إضافي للنص التمهيدي */
+      }
+      
+      .btn {
+        padding: 14px 22px; /* تعديل الحجم */
+        font-size: 1em; /* تعديل حجم الخط */
+      }
+      
+      nav a {
+        font-size: 1.1em; /* تعديل حجم الروابط للشاشات الصغيرة */
       }
     }
   </style>
@@ -643,6 +765,13 @@
   <!-- Progress Bar -->
   <div class="progress-container">
     <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- Mobile Menu Toggle -->
+  <div class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
 
   <!-- Background Elements -->
@@ -687,9 +816,9 @@
   </div>
 
   <!-- Navigation -->
-  <nav>
+  <nav id="mainNav">
     <a href="#about">About</a>
-    <a href="#Successes">Successes</a>
+    <a href="#Some Achievements">Some Achievements</a>
     <a href="#roles">Roles</a>
     <a href="#profiles">Profiles</a>
     <a href="#contacts">Contacts</a>
@@ -729,17 +858,17 @@
     </div>
 
     <!-- Achievements Section -->
-    <div id="Successes" class="card">
-      <h2>Successes</h2>
+    <div id="Some Achievements" class="card">
+      <h2>Some Achievements</h2>
       <ul>
         <li><strong>Expert</strong> on Codeforces (2025)</li>
         <li><strong>Medalist</strong> — infO(1)Cup (2025)</li>
-        <li><strong>4th place</strong> — TeamsCode Novice Division (2025)</li>
-        <li><strong>Ranked 11 in Egypt</strong> — ETSR Online Quals (2025)</li>
+        <li><strong>4th place (global)</strong> — TeamsCode Novice Division (2025)</li>
+        <li><strong>11th place (national)</strong> — ETSR Online Quals (2025)</li>
         <li><strong>Represented Egypt</strong> — APIO (2025)</li>
         <li><strong>Represented Egypt</strong> — IATI SHU (Junior Division) (2024)</li>
         <li><strong>Qualified</strong> — EOI Juniors Winter Camp (2024)</li>
-        <li>Problem Setter & Tester at DataCurve (2024)</li>
+        <li><strong>Worked as a Problem Setter and Tester (LLM Trainer)</strong> — DataCurve (2024)</li>
       </ul>
     </div>
 
@@ -748,7 +877,7 @@
       <h2>Roles & Community</h2>
       <ul>
         <li>Mentor — CS Club STEM</li>
-        <li>Member — Hack Club STEM</li>
+        <li>Member of the council — Hack Club STEM Egypt</li>
         <li>Problem Setter — Asyut Hack Club</li>
       </ul>
     </div>
@@ -834,6 +963,39 @@
     window.addEventListener('scroll', function() {
       lastScrollY = window.scrollY;
       requestTick();
+    });
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    
+    menuToggle.addEventListener('click', function() {
+      mainNav.classList.toggle('active');
+      
+      // Transform hamburger to X
+      const spans = menuToggle.querySelectorAll('span');
+      if (mainNav.classList.contains('active')) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+      } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      }
+    });
+
+    // Close menu when clicking on a link (mobile)
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 768) {
+          mainNav.classList.remove('active');
+          const spans = menuToggle.querySelectorAll('span');
+          spans[0].style.transform = 'none';
+          spans[1].style.opacity = '1';
+          spans[2].style.transform = 'none';
+        }
+      });
     });
 
     // Active Navigation - Fixed version
